@@ -11,6 +11,10 @@ packages
 .flutter-plugins
 *.iml
 
+# full cleanup
+android/*
+ios/*
+
 gradle/
 gradle.wrapper/
 gradlew
