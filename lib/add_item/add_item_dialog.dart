@@ -9,9 +9,18 @@ class AddItemDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return new StoreConnector<AppState, OnAddCallback>(
         converter: (store) {
-      return (itemName) =>
+          // https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65#f4b5
+          // this function below is returned to the builder below
+          // "itemName" below is a parameter name. This was originally
+          // return (itemName) => store.dispatch...
+          // which does not explicitly call out the types
+      void Function(String) callback = (itemName) =>
           store.dispatch(AddItemAction(CartItem(itemName, false)));
+      return callback;
     }, builder: (context, callback) {
+          // the builder knows ahead of time what "could" be added.
+          // the "callback" is the method returned from the converter.
+          // that in some sense makes the store "accessible"
       return new AddItemDialogWidget(callback);
     });
   }
