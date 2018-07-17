@@ -1,4 +1,7 @@
-# ShoppingList 
+Below is the original article. The only changes since
+are some inline documentation.
+
+# ShoppingList
 Flutter example of shopping app using Redux architecture by using [flutter_redux](https://pub.dartlang.org/packages/flutter_redux) package.
 
 You can read more about Flutter with Redux in my article: [Flutter + Redux - How to make Shopping List App?](https://medium.com/@pszklarska/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65)
